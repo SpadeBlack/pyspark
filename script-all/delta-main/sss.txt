@@ -1,0 +1,4 @@
+pyspark --packages io.delta:delta-core_2.12:0.6.0 --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" --conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog
+Vikas Soni1:33 PM
+data = spark.range(0, 5)
+data.write.format("delta").mode("overwrite").save("/delta-table/events")
